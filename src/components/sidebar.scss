@@ -1,0 +1,111 @@
+.sidebar {
+	--border-radius: 5px;
+	--width: var(--sidebar-width);
+	// height: 100%;
+	width: var(--width);
+	padding: .5rem;
+	background-color: var(--background-lighter-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&>* {
+		display: flex;
+		flex-direction: column;
+		gap: .2rem;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1em;
+
+		.element {
+			display: flex;
+			height: 1em;
+			flex-direction: row;
+			padding: 0.3em;
+			align-items: center;
+			border-radius: 5px;
+
+			&>*{
+				background-color: transparent;
+			}
+			& .icon {
+				font-size: 1em;
+				width: 1em;
+			}
+			span.title {
+				cursor: default;
+				// user-select: none;
+				// -khtml-user-select: none;
+			}
+			&:hover {
+				background-color: var(--background-darker-color);
+			}
+		}
+	}
+
+	// &>.top,
+	// .bottom {
+	// 	&>.element {
+	// 		background-color: var(--background-color);
+	// 		user-select: none;
+	// 		border-radius: 50px;
+	// 		transition: 100ms;
+
+	// 		width: var(--width);
+	// 		height: var(--width);
+
+	// 		& .icon {
+	// 			font-size: var(--width);
+	// 		}
+
+	// 		&.active {
+	// 			border-radius: 5px;
+	// 			background-color: var(--accent-color);
+	// 		}
+
+	// 		// &[data-descr]:hover::before {
+	// 		// 	content: '';
+	// 		// 	width: 0;
+	// 		// 	height: 0;
+	// 		// 	position: absolute;
+	// 		// 	border: .5em solid var(--background-darker-color);
+	// 		// 	border-left: 0;
+	// 		// 	border-top-color: transparent;
+	// 		// 	border-bottom-color: transparent;
+	// 		// 	z-index: 100;
+	// 		// 	margin-top: calc(var(--width)/2);
+	// 		// 	transform: translateY(-50%);
+	// 		// 	margin-left: calc(var(--width) + .3rem);
+	// 		// 	transition: 100ms;
+	// 		// }
+
+	// 		// &[data-descr]:hover::after {
+	// 		// 	content: attr(data-descr);
+	// 		// 	position: absolute;
+	// 		// 	background-color: var(--background-darker-color);
+	// 		// 	padding: .3em;
+	// 		// 	border-radius: var(--border-radius);
+	// 		// 	margin-left: .8rem;
+	// 		// 	margin-top: calc(var(--width)/2);
+	// 		// 	transform: translateY(-50%);
+	// 		// 	z-index: 99;
+	// 		// 	transition: 100ms;
+	// 		// }
+
+
+	// 		&>.content {
+	// 			width: var(--width);
+	// 			height: var(--width);
+	// 		}
+	// 	}
+
+	// 	&>.divider {
+	// 		border: 1px solid var(--background-darker-color);
+	// 		border-radius: var(--border-radius);
+	// 		margin: .1rem 0;
+	// 	}
+	// }
+}
