@@ -16,17 +16,18 @@ export default function Sidebar({ onChoose, chosen }: SidebarProps) {
 	]
 	return (
 		<div className="sidebar">
+			<div className="title">Lumine Launcher</div>
 			<div className="list">
 				{versions.map((version: VersionInfo) =>
 					<div
 						className={"element" + (chosen[1]?.id == version.id ? " active" : "")}
 						data-descr={version.name}
 						key={version.id}
+						onClick={() => onChoose({ version })}
 					>
 						<img
 							className="icon"
 							src={version.icon || "/assets/test-icon.png"}
-							onClick={() => onChoose({ version })}
 						/>
 						<span className="title">{version.name}</span>
 					</div>
@@ -37,11 +38,11 @@ export default function Sidebar({ onChoose, chosen }: SidebarProps) {
 						className={"element" + (chosen[0]?.id == account.id ? " active" : "")}
 						data-descr={account.nickname}
 						key={account.id}
+						onClick={() => onChoose({ account })}
 					>
 						<img
 							className="icon"
 							src={account.icon || "/assets/test-icon.png"}
-							onClick={() => onChoose({ account })}
 						/>
 						<span className="title">{account.nickname}</span>
 					</div>

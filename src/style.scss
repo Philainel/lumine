@@ -4,7 +4,10 @@ body {
 	background-color: var(--background-color);
 	color: var(--text-color);
 }
-
+* {
+	user-select: none;
+	-webkit-user-select: none;
+}
 :root {
 	--background-color: #1E1E1E;
 	--background-darker-color: #181818;
@@ -13,7 +16,7 @@ body {
 	--text-color: #ccc;
 	--accent-color: #a84502;
 
-	--sidebar-width: 10em;
+	--sidebar-width: 13em;
 }
 
 .app {

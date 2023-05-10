@@ -7,7 +7,15 @@
 	background-color: var(--background-lighter-color);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
+
+	>.title {
+		font-size: 1.3em;
+		font-weight: bold;
+		padding: .5em;
+		display: block;
+		text-align: center;
+	}
 
 	&>* {
 		display: flex;
@@ -34,6 +42,7 @@
 			& .icon {
 				font-size: 1em;
 				width: 1em;
+				margin-right: 0.3em;
 			}
 			span.title {
 				cursor: default;
