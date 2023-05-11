@@ -2,8 +2,9 @@ import { AccountInfo, VersionInfo } from "../types/Info"
 import { SidebarProps } from "../types/Params"
 import { RiSettings4Fill } from "react-icons/ri"
 import "./sidebar.scss"
+import { useState } from "react"
 
-export default function Sidebar({ onChoose, chosen, accounts, versions }: SidebarProps) {
+export default function Sidebar({ onChoose, chosen, accounts, versions, onShowSwitcher }: SidebarProps) {
 	let account = chosen[0]
 	return (
 		<div className="sidebar">
@@ -12,7 +13,6 @@ export default function Sidebar({ onChoose, chosen, accounts, versions }: Sideba
 				{versions.map((version: VersionInfo) =>
 					<div
 						className={"element" + (chosen[1]?.id == version.id ? " active" : "")}
-						data-descr={version.name}
 						key={version.id}
 						onClick={() => onChoose({ version })}
 					>
@@ -40,7 +40,9 @@ export default function Sidebar({ onChoose, chosen, accounts, versions }: Sideba
 				)} */}
 			</div>
 			<div className="bottom">
-				<div className="account">
+				<div className="account"
+					onClick={onShowSwitcher}
+				>
 					<img
 						className="icon"
 						src={account?.icon || "/assets/test-icon.png"}

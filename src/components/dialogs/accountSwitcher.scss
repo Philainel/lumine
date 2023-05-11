@@ -1,0 +1,36 @@
+.account-switcher-element {
+	font-weight: normal;
+	cursor: default;
+	// margin-right: auto;
+	display: flex;
+	align-items: center;
+	padding: .2em;
+	border-radius: 5px;
+	gap: .2em;
+
+	// &:hover {
+	// 	background-color: var(--background-lighter-color);
+	// }
+	>.icon {
+		height: 2.5em;
+		width: 2.5em;
+	}
+
+	>.text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		margin-right: .3em;
+
+		>.name {
+			color: var(--text-color);
+			font-size: 1.2em;
+		}
+
+		>.type {
+			font-size: .9em;
+			color: gray
+		}
+	}
+}

@@ -4,6 +4,7 @@ import Window from "./components/Window";
 import { AccountInfo, VersionInfo } from "./types/Info";
 import { SidebarPropsOnChooseArgs } from "./types/Params";
 import { invoke } from "@tauri-apps/api";
+import AccountSwitcher from "./components/dialogs/accountSwitcher";
 
 function App() {
 	let [account, setAccount] = useState<AccountInfo | undefined>(undefined)
@@ -19,6 +20,7 @@ function App() {
 		{ nickname: "Philainel", type: "microsoft", id: 0, },
 		{ nickname: "_Terris_", type: "offline", id: 1, },
 	]
+	let [switcherShown, setSwitcherShown] = useState<boolean>(false)
 
 	useEffect(() => {
 		invoke("get_data").then(console.log)
@@ -31,8 +33,22 @@ function App() {
 	}
 	return (
 		<div className="app">
-			<Sidebar onChoose={OnChooseSidebar} chosen={[account, version]} accounts={accounts} versions={versions}/>
+			<Sidebar
+				onChoose={OnChooseSidebar}
+				chosen={[account, version]}
+				accounts={accounts}
+				versions={versions}
+				onShowSwitcher={() => setSwitcherShown(true)}
+			/>
 			<Window version={version} account={account} />
+			<AccountSwitcher
+				isShown={switcherShown}
+				onSubmit={(account?: AccountInfo) => {
+					if(account) setAccount(account)
+					setSwitcherShown(false)
+				}}
+				accounts={accounts}
+			/>
 		</div>
 	);
 }
