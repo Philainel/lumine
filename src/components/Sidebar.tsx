@@ -3,17 +3,8 @@ import { SidebarProps } from "../types/Params"
 import { RiSettings4Fill } from "react-icons/ri"
 import "./sidebar.scss"
 
-export default function Sidebar({ onChoose, chosen }: SidebarProps) {
-	let versions: VersionInfo[] = [
-		{ name: "Fabric 1.19.2", id: 0 },
-		{ name: "Fabric 1.19", id: 1 },
-		{ name: "1.19.2", id: 2 },
-		{ name: "Snapshot 22w50a", id: 3 },
-	]
-	let accounts: AccountInfo[] = [
-		{ nickname: "Philainel", type: "offline", id: 0, },
-		{ nickname: "_Terris_", type: "offline", id: 1, },
-	]
+export default function Sidebar({ onChoose, chosen, accounts, versions }: SidebarProps) {
+	let account = chosen[0]
 	return (
 		<div className="sidebar">
 			<div className="title">Lumine Launcher</div>
@@ -32,8 +23,8 @@ export default function Sidebar({ onChoose, chosen }: SidebarProps) {
 						<span className="title">{version.name}</span>
 					</div>
 				)}
-				<div className="divider" />
-				{accounts.map((account: AccountInfo) =>
+				{/* <div className="divider" /> */}
+				{/* {accounts.map((account: AccountInfo) =>
 					<div
 						className={"element" + (chosen[0]?.id == account.id ? " active" : "")}
 						data-descr={account.nickname}
@@ -46,11 +37,21 @@ export default function Sidebar({ onChoose, chosen }: SidebarProps) {
 						/>
 						<span className="title">{account.nickname}</span>
 					</div>
-				)}
+				)} */}
 			</div>
-			{/* <div className="bottom">
-				<div className="element"><RiSettings4Fill className="icon" /></div>
-			</div> */}
+			<div className="bottom">
+				<div className="account">
+					<img
+						className="icon"
+						src={account?.icon || "/assets/test-icon.png"}
+					/>
+					<div className="text">
+						<span className="name">{account?.nickname}</span>
+						<span className="type">{account?.type}</span>
+					</div>
+				</div>
+				<RiSettings4Fill className="icon" />
+			</div>
 		</div>
 	)
 }

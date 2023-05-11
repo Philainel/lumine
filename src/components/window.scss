@@ -8,7 +8,7 @@
 
 	&>* {
 		position: absolute;
-		left: calc(1rem + var(--sidebar-width));
+		left: calc(var(--sidebar-width));
 		top: 0;
 		bottom: 0;
 		right: 0;

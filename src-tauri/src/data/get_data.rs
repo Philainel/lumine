@@ -12,7 +12,7 @@ pub fn get_data() -> String {
 }
 const DEFAULT_DATA: &str = "{}";
 fn read_data() -> Result<String, String> {
-	match ProjectDirs::from("me", "philainel", "Test Launcher") {
+	match ProjectDirs::from("me", "philainel", "lumine") {
 		Some(pathes) => {
 			let path = pathes.data_dir();
 			if !path.try_exists().expect("{\"error\":{\"code\":1, \"msg\":\"Path unreachable.\"}}") {

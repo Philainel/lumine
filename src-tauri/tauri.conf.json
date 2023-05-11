@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "Lumine Launcher",
+    "productName": "lumine",
     "version": "0.0.0"
   },
   "tauri": {
