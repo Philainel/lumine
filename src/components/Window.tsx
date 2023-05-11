@@ -1,4 +1,4 @@
-import { invoke } from "@tauri-apps/api";
+import { invoke, notification } from "@tauri-apps/api";
 import { WindowProps } from "../types/Params";
 import "./window.scss";
 import { useEffect, useState } from "react";
@@ -26,13 +26,18 @@ export default function Window({ version, account }: WindowProps) {
 					setState("loading")
 					setTimeout(setState, 7 * 1000, "waiting")
 					console.log(JSON.parse(await invoke("get_data")))
+					notification.sendNotification({
+						title: "Launching...",
+						icon: "minecraft",
+						body: `Minecraft version "${version?.name}"`
+					})
 				}}
 			>
 				<div className="title">{titleByState(state)}</div>
-				<div className="comment">
+				{/* <div className="comment">
 					in <img className="icon" src={version?.icon || "/assets/test-icon.png"}/>{version?.name} as <img className="icon" src={account?.icon || "/assets/test-icon.png"}/>
 					{account?.nickname}
-				</div>
+				</div> */}
 			</button>
 		</div>
 	</div>

@@ -23,21 +23,6 @@ export default function Sidebar({ onChoose, chosen, accounts, versions, onShowSw
 						<span className="title">{version.name}</span>
 					</div>
 				)}
-				{/* <div className="divider" /> */}
-				{/* {accounts.map((account: AccountInfo) =>
-					<div
-						className={"element" + (chosen[0]?.id == account.id ? " active" : "")}
-						data-descr={account.nickname}
-						key={account.id}
-						onClick={() => onChoose({ account })}
-					>
-						<img
-							className="icon"
-							src={account.icon || "/assets/test-icon.png"}
-						/>
-						<span className="title">{account.nickname}</span>
-					</div>
-				)} */}
 			</div>
 			<div className="bottom">
 				<div className="account"

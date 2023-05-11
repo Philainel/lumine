@@ -107,7 +107,9 @@
 				cursor: default;
 			}
 
-			&:hover,
+			&:hover {
+				background-color: var(--background-color);
+			}
 			&.active {
 				background-color: var(--background-darker-color);
 			}

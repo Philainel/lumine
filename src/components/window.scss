@@ -50,16 +50,20 @@
 					font-weight: bolder;
 					font-size: 1.8em;
 				}
-
-				&>.comment {
-					display: flex;
-					align-items: center;
-
-					&>img.icon {
-						height: 1em;
-						width: 1em;
-					}
+				&.play {
+					min-width: 11em;
+					padding: .8em;
+					text-align: center;
 				}
+				// &>.comment {
+				// 	display: flex;
+				// 	align-items: center;
+
+				// 	&>img.icon {
+				// 		height: 1em;
+				// 		width: 1em;
+				// 	}
+				// }
 			}
 		}
 	}

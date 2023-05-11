@@ -3,14 +3,14 @@
 	cursor: default;
 	// margin-right: auto;
 	display: flex;
-	align-items: center;
-	padding: .2em;
+	align-items: stretch;
+	padding: .5em;
 	border-radius: 5px;
 	gap: .2em;
 
-	// &:hover {
-	// 	background-color: var(--background-lighter-color);
-	// }
+	&:hover {
+		background-color: var(--background-lighter-color);
+	}
 	>.icon {
 		height: 2.5em;
 		width: 2.5em;
