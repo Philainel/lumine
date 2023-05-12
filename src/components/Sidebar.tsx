@@ -1,6 +1,7 @@
 import { AccountInfo, VersionInfo } from "../types/Info"
 import { SidebarProps } from "../types/Params"
 import { RiSettings4Fill, RiArrowUpSFill, RiAddCircleFill } from "react-icons/ri"
+import { translate } from "../types/localization"
 import "./sidebar.scss"
 
 export default function Sidebar({ onChoose, chosen, versions, onShowSwitcher, switcherShown, onShowSettings, settingsShown }: SidebarProps) {
@@ -22,7 +23,7 @@ export default function Sidebar({ onChoose, chosen, versions, onShowSwitcher, sw
 						<span className="title">{version.name}</span>
 					</div>
 				)}
-				{!!versions.length && <span className="or">─────── or ───────</span>}
+				{!!versions.length && <span className="or">─────── {translate("common.or")} ───────</span>}
 				<div
 					className="element add"
 					onClick={() => { }}
@@ -30,7 +31,8 @@ export default function Sidebar({ onChoose, chosen, versions, onShowSwitcher, sw
 					<div className="icon">
 						<RiAddCircleFill />
 					</div>
-					<span className="title">Install new version</span>
+					<span className="title">{translate("sidebar.add.version")}</span>
+					{/* <span className="title">Install new version</span> */}
 				</div>
 			</div>
 			<div className="bottom">

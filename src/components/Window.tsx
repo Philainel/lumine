@@ -3,14 +3,15 @@ import { WindowProps } from "../types/Params";
 import "./window.scss";
 import { useEffect, useState } from "react";
 import { WindowStates } from "../types/States";
+import { translate } from "../types/localization";
 
 export default function Window({ version, account }: WindowProps) {
 	let [state, setState] = useState<WindowStates>("waiting")
 	function titleByState(state: WindowStates) {
 		switch(state) {
 			default:
-			case "waiting": return "Play"
-			case "loading": return "Loading..."
+			case "waiting": return translate("main.button.play.play")
+			case "loading": return translate("main.button.play.loading")
 
 		}
 	}
@@ -27,9 +28,9 @@ export default function Window({ version, account }: WindowProps) {
 					setTimeout(setState, 7 * 1000, "waiting")
 					console.log(JSON.parse(await invoke("get_data")))
 					notification.sendNotification({
-						title: "Launching...",
+						title: translate("main.notification.launching"),
 						icon: "minecraft",
-						body: `Minecraft version "${version?.name}"`
+						body: `${translate("main.notification.version")} "${version?.name}"`
 					})
 				}}
 			>
@@ -41,8 +42,10 @@ export default function Window({ version, account }: WindowProps) {
 			</button>
 		</div>
 	</div>
-	let noAccount = <div className="pick">Pick or add new account on the sidebar.</div>
-	let noVersion = <div className="pick">Pick or add new version on the sidebar.</div>
+	let noAccount = <div className="pick">{translate("main.pick.account")}</div>
+	let noVersion = <div className="pick">{translate("main.pick.version")}</div>
+	// let noAccount = <div className="pick">Pick or add new account on the sidebar.</div>
+	// let noVersion = <div className="pick">Pick or add new version on the sidebar.</div>
 	return (
 		<div className="window">
 			{
