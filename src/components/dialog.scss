@@ -10,17 +10,22 @@
 
 	>.content {
 		margin: auto;
-		padding: .5em;
+		padding: .7em;
 		background-color: var(--background-color);
 		min-width: 25%;
 		min-height: 15%;
 		display: flex;
-		border-radius: 3px;
+		border-radius: 10px;
 		border: 1px solid var(--text-color);
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		
+
+		>.title {
+			font-weight: bold;
+			font-size: 1.2em;
+			margin: .3em 0;
+		}
 	}
 
 	&.hidden {

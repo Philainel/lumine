@@ -1,0 +1,23 @@
+.settings-dialog-wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: .4em;
+
+	>.buttons {
+		display: flex;
+		gap: .2em;
+
+		>button {
+			color: var(--text-color);
+			background-color: var(--background-lighter-color);
+			border: none;
+			border-radius: 5px;
+			font-size: 1em;
+
+			&:hover {
+				background-color: var(--background-darker-color);
+			}
+		}
+	}
+}

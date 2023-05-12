@@ -1,10 +1,9 @@
 import { AccountInfo, VersionInfo } from "../types/Info"
 import { SidebarProps } from "../types/Params"
-import { RiSettings4Fill } from "react-icons/ri"
+import { RiSettings4Fill, RiArrowUpSFill, RiAddCircleFill } from "react-icons/ri"
 import "./sidebar.scss"
-import { useState } from "react"
 
-export default function Sidebar({ onChoose, chosen, accounts, versions, onShowSwitcher }: SidebarProps) {
+export default function Sidebar({ onChoose, chosen, versions, onShowSwitcher, switcherShown, onShowSettings, settingsShown }: SidebarProps) {
 	let account = chosen[0]
 	return (
 		<div className="sidebar">
@@ -23,6 +22,16 @@ export default function Sidebar({ onChoose, chosen, accounts, versions, onShowSw
 						<span className="title">{version.name}</span>
 					</div>
 				)}
+				{!!versions.length && <span className="or">─────── or ───────</span>}
+				<div
+					className="element add"
+					onClick={() => { }}
+				>
+					<div className="icon">
+						<RiAddCircleFill />
+					</div>
+					<span className="title">Install new version</span>
+				</div>
 			</div>
 			<div className="bottom">
 				<div className="account"
@@ -36,8 +45,16 @@ export default function Sidebar({ onChoose, chosen, accounts, versions, onShowSw
 						<span className="name">{account?.nickname}</span>
 						<span className="type">{account?.type}</span>
 					</div>
+					<div className={"arrow" + (switcherShown ? " active" : "")}>
+						<RiArrowUpSFill />
+					</div>
 				</div>
-				<RiSettings4Fill className="icon" />
+				<div
+					className={"settings" + (settingsShown ? " active" : "")}
+					onClick={() => onShowSettings()}
+				>
+					<RiSettings4Fill />
+				</div>
 			</div>
 		</div>
 	)

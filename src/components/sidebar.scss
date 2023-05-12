@@ -58,7 +58,6 @@
 				flex-direction: column;
 				align-items: flex-start;
 				justify-content: center;
-				margin-right: .3em;
 
 				>.name {
 					color: var(--text-color);
@@ -69,6 +68,29 @@
 					font-size: .6em;
 					color: gray
 				}
+			}
+
+			>.arrow {
+				margin: 0 .1em 0 .3em;
+				display: flex;
+				align-items: center;
+				font-size: 1.5em;
+
+				&.active {
+					transform: rotate(0.5turn);
+				}
+			}
+		}
+
+		.settings {
+			display: flex;
+			align-items: center;
+			padding: .2em;
+			border-radius: 5px;
+
+			&:hover,
+			&.active {
+				background-color: var(--background-lighter-color);
 			}
 		}
 	}
@@ -84,6 +106,7 @@
 		flex-direction: column;
 		gap: 0.1em;
 		padding: 0.5em;
+		overflow: auto;
 
 		.element {
 			display: flex;
@@ -110,9 +133,24 @@
 			&:hover {
 				background-color: var(--background-color);
 			}
+
 			&.active {
 				background-color: var(--background-darker-color);
 			}
+
+			&.add {
+				>.icon {
+					font-size: 1em;
+					display: flex;
+					align-items: center;
+				}
+			}
+		}
+
+		>span.or {
+			text-align: center;
+			align-self: center;
+			color: rgb(82, 82, 82);
 		}
 	}
 
