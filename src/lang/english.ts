@@ -1,6 +1,7 @@
 import { Language } from "../types/localization";
 
 export default {
+	"language": "English",
 	"common.or": "or",
 	"main.button.play.play": "Play",
 	"main.button.play.loading": "Loading...",
