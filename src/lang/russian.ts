@@ -17,5 +17,7 @@ export default {
 	
 	"dialog.settings": "Настройки",
 	"dialog.settings.button.cancel": "Отменить",
-	"dialog.settings.button.submit": "Применить"
+	"dialog.settings.button.submit": "Применить",
+	"dialog.settings.lang": "Язык",
+	"dialog.settings.n-on-launch": "Уведомление о запуске"
 } as Language

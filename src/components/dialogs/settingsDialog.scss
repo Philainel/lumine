@@ -4,6 +4,27 @@
 	flex-direction: column;
 	gap: .4em;
 
+	table {
+		>tbody {
+			>tr {
+				>td {
+					&:nth-child(-n+1) {
+						text-align: end;
+					}
+				}
+			}
+		}
+	}
+
+	select {
+		background-color: var(--background-darker-color);
+		border: none;
+		appearance: none;
+		-webkit-appearance: none;
+		color: var(--text-color);
+		padding: .4em;
+	}
+
 	>.buttons {
 		display: flex;
 		gap: .2em;

@@ -17,5 +17,7 @@ export default {
 	
 	"dialog.settings": "Settings",
 	"dialog.settings.button.cancel": "Cancel",
-	"dialog.settings.button.submit": "Submit"
+	"dialog.settings.button.submit": "Submit",
+	"dialog.settings.lang": "Language",
+	"dialog.settings.n-on-launch": "Launching notification"
 } as Language

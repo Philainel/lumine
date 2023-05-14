@@ -2,6 +2,7 @@ import { useState } from "react"
 import unlocalised from "../lang/unlocalised"
 import english from "../lang/english"
 import russian from "../lang/russian"
+import { useSettingsProperty } from "../settings"
 
 export type Language = { [key: string]: string }
 export type LanguageList = {
@@ -14,6 +15,7 @@ export const languages: LanguageList = {
 	english,
 	russian
 }
+// let [lang, setLang] = useSettingsProperty("language")
 let language: keyof LanguageList = "english"
 function changeLanguage(newlang: keyof LanguageList) {
 	language = newlang
@@ -27,6 +29,7 @@ export function useLanguage(): [
 		language,
 		(newl) => {
 			changeLanguage(newl.valueOf() as keyof LanguageList)
+			// setLang(newl)
 			_setLanguage(language)
 		}
 	]

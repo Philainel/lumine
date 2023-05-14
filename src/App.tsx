@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSettingsProperty } from "./settings";
 import Sidebar from "./components/Sidebar";
 import Window from "./components/Window";
 import { AccountInfo, VersionInfo } from "./types/Info";
